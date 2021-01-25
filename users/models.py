@@ -11,8 +11,8 @@ class Profile(models.Model):
     def __str__(self):
         return f'{self.user.username} Profile'
 
-    def save(self): # This is the method that gets run after our model is saved.
-        super().save() # To run the save method 
+    def save(self, *args, **kwargs): # This is the method that gets run after our model is saved.
+        super().save(*args, **kwargs) # To run the save method 
 
         # Get the image it saved and resize it
         img = Image.open(self.image.path) # Open the image of the current instance.
