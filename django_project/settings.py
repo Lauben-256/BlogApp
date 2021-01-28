@@ -153,17 +153,18 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 if os.getcwd() == '/app':
     import dj_database_url
     DATABASES = {
-        'default' : dj_database_url.config(default='mysql://localhost')
+        'default': dj_database_url.config(default='mysql://localhost')
     }
-    # Honor the 'X-FORWARDED-PROTO' header for request.is_secure().
-    SECURE_PROXY_SSL_HEADER = ('HTTP-X-FORWARDED-PROTO', 'https')
+
+    # Honor the 'X-Forwarded-Proto' header for request.is_secure().
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
     # Allow all host headers.
     
 
-    # Static asset configuration.
-    BASE_DIR.os.path.dirname(os.path.abspath(__file__))
+    # Static asset configuration
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     STATIC_ROOT = 'staticfiles'
     STATIC_DIRS = (
-        os.path.join(BASE_DIR, 'static')
+        os.path.join(BASE_DIR, 'static'),
     )
