@@ -150,21 +150,3 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
-
-if os.getcwd() == '/app':
-    import dj_database_url
-    DATABASES = {
-        'default': dj_database_url.config(default='postgresql://localhost')
-    }
-
-    # Honor the 'X-Forwarded-Proto' header for request.is_secure().
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-    # Allow all host headers.
-    
-
-    # Static asset configuration
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    STATIC_DIRS = (
-        os.path.join(BASE_DIR, 'static'),
-    )
