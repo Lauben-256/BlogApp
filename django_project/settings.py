@@ -153,7 +153,7 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 if os.getcwd() == '/app':
     import dj_database_url
     DATABASES = {
-        'default': dj_database_url.config(default='mysql://localhost')
+        'default': dj_database_url.config(default='postgresql://localhost')
     }
 
     # Honor the 'X-Forwarded-Proto' header for request.is_secure().
