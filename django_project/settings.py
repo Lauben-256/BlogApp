@@ -128,6 +128,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 # Root directory where we want django to store our uploaded files.
@@ -164,7 +165,6 @@ if os.getcwd() == '/app':
 
     # Static asset configuration
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    STATIC_ROOT = 'staticfiles'
     STATIC_DIRS = (
         os.path.join(BASE_DIR, 'static'),
     )
