@@ -3,3 +3,4 @@ db.sqlite3
 pro_env/
 .zshrc
 .DS_Store
+*config.py
